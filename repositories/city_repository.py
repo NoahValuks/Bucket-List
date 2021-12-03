@@ -4,7 +4,7 @@ import repositories.country_repository as country_repository
 
 
 def save(city):
-    sql = "INSERT INTO cities (name, country_id, places_of_interest, visited) VALLUES (%s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO cities (name, country_id, places_of_interest, visited) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [city.name, city.country.id, city.places_of_interest, city.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -19,6 +19,19 @@ def select_all():
 
     for row in results:
         country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['places_of_interest'], row['visited'], row['id'])
+        cities.append(city)
+    return cities
+
+def select_all_from_country(country_id):
+    cities=[]
+
+    sql = "SELECT * FROM cities WHERE country_id = %s"
+    values = [country_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = country_repository.select(country_id)
         city = City(row['name'], country, row['places_of_interest'], row['visited'], row['id'])
         cities.append(city)
     return cities

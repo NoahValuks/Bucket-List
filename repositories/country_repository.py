@@ -3,11 +3,10 @@ from models.country import Country
 
 
 def save(country):
-    sql = "INSERT INTO countries (name, capital, population, visited) VALLUES (%s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO countries (name, capital, population, visited) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [country.name, country.capital, country.population, country.visited]
     results = run_sql(sql, values)
-    id = results[0]['id']
-    country.id = id 
+    country.id = results[0]['id']
     return country 
 
 def select_all():

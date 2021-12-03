@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/countries/new">New Country!</a></li>
+    </ul>
+</nav>
+
+<h1>Add City to Bucket List!</h1>
+<form action="/countries" method="post">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+    </div>
+  
+    <div>
+        <label for="country">Country:</label>
+        <select id="country" name="country_id">
+          {% for country in countries %}
+              <option value="{{country.id}}">{{country.name}}</option>
+          {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="places_of_interest">Enter what you're interested in doing there:</label>
+        <input type="text" id="places_of_interest" name="places_of_interest">
+    </div>
+  
+    <div>
+        <label for="visited">Visited:</label>
+        <select id="visited" name="visited">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+    </div>
+  
+    <button type="submit">Add Task</button>
+  
+</form>
+{% endblock content %}

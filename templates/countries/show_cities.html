@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Cities within {{country.name}} </h1>
+    {% for city in cities %}
+    <p>City name: {{city.name}}</p>
+    <p>Places of interest: {{city.places_of_interest}}</p>
+    {% if city.visited == True %}
+        <p>Visited: ✅</p>
+    {% endif %}
+    {% endfor %}
+{% endblock content %}

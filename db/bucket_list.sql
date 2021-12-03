@@ -1,11 +1,11 @@
-DROP TABLE countries;
 DROP TABLE cities;
+DROP TABLE countries;
 
 CREATE TABLE countries(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     capital VARCHAR(255),
-    popular INT,
+    population INT,
     visited BOOLEAN
 );
 
