@@ -1,42 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="/countries" method="post">
+<form action="/countries/{{country.id}}" method="post">
     <div>
       <label for="name">Name:</label>
-      <input type="text" id="description" name="name" value="{{city.name}}" placeholder="Name" required autofocus>
+      <input type="text" id="description" name="name" value="{{country.name}}" placeholder="Name" required autofocus>
+    </div>
+  
+    <div>
+      <label for="capital">Capital:</label>
+      <input type="text" id="capital" name="capital" value="{{country.capital}}" placeholder="capital" required>
     </div>
 
     <div>
-        <label for="country">Country:</label>
-        <select id="country" name="country_id">
-          {% for country in countries %}
-              <option value="{{country.id}}" {% if city.country.id == country.id %}
-                  selected="selected"
-              {% endif %}>{{country.name}}</option>
-          {% endfor %}
-        </select>
-      </div>
-  
-    <div>
-      <label for="places_of_interest">Enter what you're interested in doing there:</label>
-      <input type="text" id="places_of_interest" name="places_of_interest" value="{{city.places_of_interest}}" placeholder="places_of_interest" required>
+        <label for="population">Population:</label>
+        <input type="number" id="population" name="population", value="{{country.population}}", placeholder="population" required>
     </div>
   
     <div>
       <label for="visited">Visited:</label>
       <select id="visited" name="visited">
-        <option value="true" {% if city.visited == True %}
+        <option value="true" {% if country.visited == True %}
             selected ="selected"
         {% endif %}>True</option>
-        <option value="false" {% if city.visited == False %}
+        <option value="false" {% if country.visited == False %}
             selected ="selected"
         {% endif %}>False</option>
       </select>
     </div>
   
-    <button type="submit">Update City</button>
+    <button type="submit">Update Country</button>
   
 </form>
-
-<p>If the country is not on the list <a href="/countries/new">click here!</a></p>
 {% endblock content %}

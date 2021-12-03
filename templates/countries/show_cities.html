@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Cities within {{country.name}} </h1>
+<p>To edit the country <a href="/countries/{{country.id}}/edit">click here</a></p>
+  
+
+<h1>Cities within {{country.name}} </h1>
     {% for city in cities %}
     <p><a href="/countries/cities/{{ city.id }}"> {{city.name}} </a>|
         Visited: 
