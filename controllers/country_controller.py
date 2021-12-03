@@ -30,3 +30,4 @@ def create_country():
     country = Country(name, capital, population, visited)
     country_repository.save(country)
     return redirect("/countries")
+

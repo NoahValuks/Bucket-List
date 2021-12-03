@@ -32,3 +32,14 @@ def edit_city(id):
     city = city_repository.select(id)
     countries = country_repository.select_all()
     return render_template('/cities/edit.html', city = city, countries = countries)
+
+@cities_blueprint.route("/countries/cities/<id>", methods= ['POST'])
+def update_city(id):
+    name = request.form['name']
+    country_id = int(request.form['country_id'])
+    places_of_interest = request.form['places_of_interest']
+    visited = request.form['visited']
+    country = country_repository.select(country_id)
+    city = City(name, country, places_of_interest, visited, id)
+    city_repository.update(city)
+    return redirect(f"/countries/cities/{city.id}")
