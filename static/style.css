@@ -1,0 +1,29 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgray;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+}
+
+body > header > nav > ul{
+    margin: 0;
+    list-style-type: none;  
+    font-weight: bold;  
+    font-size: 20px;
+    background-color: dimgray;   
+}
+
+footer{
+    margin:0;
+    text-align: center;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height: 40px;
+    background-color: dimgray;
+}
+
+#country_table{
+    margin: 0 auto;
+}
