@@ -8,12 +8,16 @@
     <th>Name</th>
     <th>Capital</th>
     <th>Population</th>
+    <th>Vistied?</th>
   </tr>
   {% for country in countries %}
   <tr>
     <td><a href="/countries/{{ country.id }}"> {{country.name}} </a></td>
-    <td>{{ country.capital }}</td>
+    <td>{{country.capital}}</td>
     <td>{{country.population}}</td>
+    <td>{% if country.visited == True %}
+        ✅
+    {% endif %}</td>
   </tr>
   {% endfor %}
 </table>
