@@ -21,3 +21,14 @@ def create_city():
     city = City(name, country, places_of_interest, visited)
     city_repository.save(city)
     return redirect(f"/countries/{country_id}")
+
+@cities_blueprint.route('/countries/cities/<id>')
+def show_city(id):
+    city = city_repository.select(id)
+    return render_template('/cities/index.html', city=city)
+
+@cities_blueprint.route('/countries/cities/<id>/edit')
+def edit_city(id):
+    city = city_repository.select(id)
+    countries = country_repository.select_all()
+    return render_template('/cities/edit.html', city = city, countries = countries)

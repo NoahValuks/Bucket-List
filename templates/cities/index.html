@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1><b>{{city.name}}</b></h1>
+
+<p>{{city.places_of_interest}}</p>
+<P>
+    Visited: 
+    {% if city.visited == True %}
+        ✔️
+    {% endif %}
+</P>
+
+<p>To edit the city <a href="/countries/cities/{{city.id}}/edit">click here</a></p>
+{% endblock %}

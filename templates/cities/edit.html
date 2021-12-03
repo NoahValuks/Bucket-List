@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/countries/cities/{{city.id}}" method="post">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="description" name="name" value="{{city.name}}" placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="country">Country:</label>
+        <select id="country" name="country_id">
+          {% for country in countries %}
+              <option value="{{country.id}}" {% if city.country.id == country.id %}
+                  selected="selected"
+              {% endif %}>{{country.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+  
+    <div>
+      <label for="places_of_interest">Enter what you're interested in doing there:</label>
+      <textarea id="places_of_interest" name="places_of_interest" value="{{city.places_of_interest}}" placeholder="places_of_interest" required rows="4" cols="50">{{city.places_of_interest}}</textarea>
+    </div>
+  
+    <div>
+      <label for="visited">Visited:</label>
+      <select id="visited" name="visited">
+        <option value="true" {% if city.visited == True %}
+            selected ="selected"
+        {% endif %}>True</option>
+        <option value="false" {% if city.visited == False %}
+            selected ="selected"
+        {% endif %}>False</option>
+      </select>
+    </div>
+  
+    <button type="submit">Update City</button>
+  
+</form>
+
+<p>If the country is not on the list <a href="/countries/new">click here!</a></p>
+{% endblock content %}

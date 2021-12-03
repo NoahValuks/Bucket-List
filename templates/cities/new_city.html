@@ -1,11 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<nav>
-    <ul>
-        <li><a href="/countries/new">New Country!</a></li>
-    </ul>
-</nav>
-
 <h1>Add City to Bucket List!</h1>
 <form action="/cities" method="post">
     <div>
@@ -38,4 +32,6 @@
     <button type="submit">Add Task</button>
   
 </form>
+
+<p>If the country is not on the list <a href="/countries/new">click here!</a></p>
 {% endblock content %}
