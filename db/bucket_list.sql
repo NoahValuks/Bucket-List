@@ -14,7 +14,6 @@ CREATE TABLE cities(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     visited BOOLEAN,
-    places_of_interest TEXT,
     country_id INT REFERENCES countries(id) ON DELETE CASCADE
 );
 
