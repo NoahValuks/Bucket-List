@@ -18,11 +18,6 @@
       </div>
   
     <div>
-      <label for="places_of_interest">Enter what you're interested in doing there:</label>
-      <textarea id="places_of_interest" name="places_of_interest" value="{{city.places_of_interest}}" placeholder="places_of_interest" required rows="4" cols="50">{{city.places_of_interest}}</textarea>
-    </div>
-  
-    <div>
       <label for="visited">Visited:</label>
       <select id="visited" name="visited">
         <option value="true" {% if city.visited == True %}

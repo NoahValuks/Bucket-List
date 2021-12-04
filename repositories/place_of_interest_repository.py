@@ -19,7 +19,7 @@ def select_all():
     for row in results:
         city = city_repository.select(row['city_id'])
         place_of_interest = PlaceOfInterest(row['name'], row['information'], city, row['visited'], row['id'])
-        place_of_interest.append(place_of_interest)
+        places_of_interest.append(place_of_interest)
     return places_of_interest
 
 def select(id):

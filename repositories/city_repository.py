@@ -4,8 +4,8 @@ import repositories.country_repository as country_repository
 
 
 def save(city):
-    sql = "INSERT INTO cities (name, country_id, places_of_interest, visited) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [city.name, city.country.id, city.places_of_interest, city.visited]
+    sql = "INSERT INTO cities (name, country_id, visited) VALUES (%s, %s, %s) RETURNING *"
+    values = [city.name, city.country.id, city.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
     city.id = id 
@@ -19,7 +19,7 @@ def select_all():
 
     for row in results:
         country = country_repository.select(row['country_id'])
-        city = City(row['name'], country, row['places_of_interest'], row['visited'], row['id'])
+        city = City(row['name'], country, row['visited'], row['id'])
         cities.append(city)
     return cities
 
@@ -32,7 +32,7 @@ def select_all_from_country(country_id):
 
     for row in results:
         country = country_repository.select(country_id)
-        city = City(row['name'], country, row['places_of_interest'], row['visited'], row['id'])
+        city = City(row['name'], country, row['visited'], row['id'])
         cities.append(city)
     return cities
 
@@ -44,7 +44,7 @@ def select(id):
 
     if result is not None:
         country = country_repository.select(result['country_id'])
-        city = City(result['name'], country, result['places_of_interest'], result['visited'], result['id'])
+        city = City(result['name'], country, result['visited'], result['id'])
     return city
 
 def delete_all():
@@ -58,6 +58,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(city):
-    sql = "UPDATE cities SET (name, country_id, places_of_interest, visited) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [city.name, city.country.id, city.places_of_interest, city.visited, city.id]
+    sql = "UPDATE cities SET (name, country_id, visited) = (%s, %s, %s) WHERE id = %s"
+    values = [city.name, city.country.id, city.visited, city.id]
     run_sql(sql, values)
