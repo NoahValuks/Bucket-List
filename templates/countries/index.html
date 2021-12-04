@@ -2,13 +2,15 @@
 
 {% block content %}
 <h1><b>Countries</b></h1>
+<p><a href="/countries/new">add country</a></p></p>
 
 <table id="country_table">
   <tr>
     <th>Name</th>
     <th>Capital</th>
     <th>Population</th>
-    <th>Vistied?</th>
+    <th>Visited?</th>
+    <th>Delete?</th>
   </tr>
   {% for country in countries %}
   <tr>
@@ -18,6 +20,11 @@
     <td>{% if country.visited == True %}
         ✔️
     {% endif %}</td>
+    <td>
+      <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
+        <button class="trash-button">Delete City</button>
+      </form>
+    </td>
   </tr>
   {% endfor %}
 </table>

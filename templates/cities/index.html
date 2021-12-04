@@ -9,6 +9,9 @@
     {% if city.visited == True %}
         ✔️
     {% endif %}
+    <form class="delete-form" action="/countries/cities/{{city.id}}/delete" method="POST">
+        <button class="trash-button">Delete City</button>
+    </form>
 </P>
 
 <p>To edit the city <a href="/countries/cities/{{city.id}}/edit">click here</a></p>
