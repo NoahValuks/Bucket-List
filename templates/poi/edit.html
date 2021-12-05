@@ -10,20 +10,19 @@
         <label for="city">City:</label>
         <select id="city" name="city_id">
           {% for city in cities %}
-              <option value="{{city.id}}" {% if city.city.id == city.id %}
+              <option value="{{city.id}}" {% if city.id == place.city.id %}
                   selected="selected"
               {% endif %}>{{city.name}}</option>
-          {% endfor %}
-        </select>
-      </div>
-  
+              {% endfor %}
+            </select>
+    </div>
     <div>
       <label for="visited">Visited:</label>
       <select id="visited" name="visited">
-        <option value="true" {% if city.visited == True %}
+        <option value="true" {% if place.visited == True %}
             selected ="selected"
         {% endif %}>True</option>
-        <option value="false" {% if city.visited == False %}
+        <option value="false" {% if place.visited == False %}
             selected ="selected"
         {% endif %}>False</option>
       </select>

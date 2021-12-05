@@ -15,7 +15,7 @@
 <p>
     {% for place in places %}
         <b>Name:</b> {{place.name}}
-        <br><b>Information:</b>{{place.information}}
+        <br><b>Information:</b> {{place.information}}
         <br><b>Visited?</b>
         {% if place.visited == True %}
             ✔️

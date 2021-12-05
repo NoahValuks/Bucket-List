@@ -4,7 +4,7 @@ from models.place_of_interest import PlaceOfInterest
 import repositories.place_of_interest_repository as place_of_interest_repository
 import repositories.city_repository as city_repository
 
-poi_blueprint = Blueprint("points_of_interest", __name__)
+poi_blueprint = Blueprint("place_of_interest", __name__)
 
 @poi_blueprint.route('/cities/place_of_interest/new')
 def new_place_of_interest():
@@ -24,6 +24,6 @@ def create_place_of_interest():
 
 @poi_blueprint.route('/cities/place_of_interest/<id>/edit')
 def edit_poi(id):
-    place_of_interest = place_of_interest_repository.select(id)
+    place = place_of_interest_repository.select(id)
     cities = city_repository.select_all()
-    return render_template('/cities/edit.html', place_of_interest = place_of_interest, cities = cities)
+    return render_template('/poi/edit.html', place = place, cities = cities)
