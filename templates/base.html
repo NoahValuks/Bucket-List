@@ -8,11 +8,14 @@
 <body>
   <header>
     <nav>
-      <ul class="menu">
-        <li><a href="/" style="color: #000000">Home</a></li>
-        <li><a href="/countries" style="color: #000000">Countries</a></li>
-        <li><a href="/cities/new" style="color: #000000">New Adventure</a></li>
-      </ul>
+      <div class="dropdown">
+        <button class="dropbtn">menu ⌆</button>
+        <div class="dropdown-content">
+          <a href="/">Home</a>
+          <a href="/countries">Countries</a>
+          <a href="cities/new">New Adventure</a>
+        </div>
+      </div>
     </nav>
   </header>
   <div class="container">
@@ -20,5 +23,7 @@
     {% endblock %}
   </div>
 </body>
-<footer>&copy;Valuks Bucket List Manager</footer>
+<footer>
+  &copy;Valuks Bucket List Manager
+</footer>
 </html>

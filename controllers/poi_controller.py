@@ -21,3 +21,9 @@ def create_place_of_interest():
     place_of_interest = PlaceOfInterest(name, information, city, visited)
     place_of_interest_repository.save(place_of_interest)
     return redirect(f"/countries/cities/{city_id}")
+
+@poi_blueprint.route('/cities/place_of_interest/<id>/edit')
+def edit_poi(id):
+    place_of_interest = place_of_interest_repository.select(id)
+    cities = city_repository.select_all()
+    return render_template('/cities/edit.html', place_of_interest = place_of_interest, cities = cities)
