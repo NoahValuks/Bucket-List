@@ -3,15 +3,17 @@
 <p>To edit the country <a href="/countries/{{country.id}}/edit">click here</a></p>
 <p><a href="/cities/new">➕ city!</a></p>
   
-
+<div id="all-cards">
 {% for city in cities %}
-<a href="/cities/{{ city.id }}"><div id="card-container"></div>
+<a href="/cities/{{ city.id }}">
+    <div id="card-container">
     <div class="text-card">
-      <div class="heading">
-        <h2>{{city.name}}</h2>
+        <div class="heading">
+            <h2>{{city.name}}</h2>
+        </div>
 
       <div class="text-box">
-    <p>
+        <p>
       {% if city.visited == True %}
       visited: ✔️
       {% else %}
@@ -24,6 +26,8 @@
       </p>
       </div>
     </div>
-    {% endfor %}
+    </div>
 </a>  
+    {% endfor %} 
+</div>
     {% endblock content %}

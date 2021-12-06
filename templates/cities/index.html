@@ -16,8 +16,9 @@
 </P>
 <p>To add a place of interest <a href="/place_of_interest/new">click here</a></p>
 
-<div id="card-container">
+<div id = "all-cards">
     {% for place in places %}
+    <div id="card-container">
     <div class="text-card">
       <div class="heading">
         <h2>{{place.name}}</h2>
@@ -38,5 +39,7 @@
       </p>
       </div>
     </div>
+    </div>
     {% endfor %}
+</div>
 {% endblock %}

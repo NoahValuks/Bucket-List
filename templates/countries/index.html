@@ -3,9 +3,10 @@
 {% block content %}
 <h1><b>Countries</b></h1>
 <p><a href="/countries/new">➕ country</a></p></p>
-<div id="card-container">
+<div id="all-cards">
 {% for country in countries %}
-<a href="/countries/{{country.id}}"><div class="text-card">
+<a href="/countries/{{country.id}}"><div id="card-container">
+  <div class="text-card">
   <div class="heading">
     <h1>{{country.name}}</h1>
     <h3>{{country.capital}}</h3>
@@ -26,6 +27,7 @@
   </div>
 </div>
 </a>
+</div>
 {% endfor %}
 </div>
 {% endblock %}
