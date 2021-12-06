@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1><b>{{city.name}}</b></h1>   
-<p>To edit the city <a href="/cities/{{city.id}}/edit">click here</a></p>
+<h1><b>{{city.name}}</b></h1>
 <p>
-    Visited: 
-    {% if city.visited == True %}
-        ✔️
-    {% else %}
-        𝘅
-    {% endif %}
-    <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
-        <button class="trash-button">Delete City</button>
-    </form>
-</P>
-<p>To add a place of interest <a href="/place_of_interest/new">click here</a></p>
+Visited: 
+{% if city.visited == True %}
+    ✔️
+{% else %}
+    𝘅
+{% endif %}
+</p>
+<nav>
+    <div class="dropdown">
+      <button class="dropbtn">options ⌆</button>
+      <div class="dropdown-content">
+        <a href="/cities/{{city.id}}/edit">Edit City</a>
+        <a href="/cities/{{city.id}}/delete">Delete City</a>
+        <a href="/place_of_interest/new">Add place of interest</a>
+      </div>
+    </div>
+  </nav>
 
 <div id = "all-cards">
     {% for place in places %}

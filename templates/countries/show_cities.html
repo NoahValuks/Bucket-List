@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<p>To edit the country <a href="/countries/{{country.id}}/edit">click here</a></p>
-<p><a href="/cities/new">➕ city!</a></p>
-  
+
+<h1>Cities in {{country.name}}</h1>
+<nav>
+    <div class="dropdown">
+      <button class="dropbtn">options ⌆</button>
+      <div class="dropdown-content">
+        <a href="/countries/{{country.id}}/edit">Edit Country</a>
+        <a href="cities/new">New City</a>
+      </div>
+    </div>
+  </nav>
+
 <div id="all-cards">
 {% for city in cities %}
 <a href="/cities/{{ city.id }}">
