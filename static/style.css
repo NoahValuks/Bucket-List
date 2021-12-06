@@ -5,20 +5,36 @@ body{
     height: 100%;
     margin: 0;
     width: 100%;
-    background-image: url("pictures/main-background.jpg");
+    background-image: url("pictures/fifth\ background.jpg");
     background-position: center;
-    background-position-y: -15vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position-y: -80;
 }
 
-body > header > nav {
-    margin: 0;
-    list-style-type: none;  
-    font-weight: bold;  
-    font-size: 20px;
-    background-color: black;
-    text-align: left;
+body > header> nav> ul > li{
+  display: inline;
+}
+
+body > header> nav> ul{
+  list-style-type: none;  
+  font-weight: bold;  
+  font-size: 20px;
+  margin: 0;
+  list-style-type: none;
+  position: absolute;
+  left: 40%;
+  bottom: 10px;
+}
+
+body > header{
+  margin: 0;
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background-position: center;
+  background-position-y: -73vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 footer{
@@ -29,7 +45,11 @@ footer{
     width:100%;
     height: 40px;
     background-color: black;
-    color: white;
+    background-position: center;
+    background-position-y: -90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(100, 93, 79);
 }
 
 
@@ -80,14 +100,21 @@ footer{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   width: 250px;
+  background-color: rgb(179, 172, 153, 0.75);
+  background-position: center;
+  background-position-y: -160vh;
+  background-position-x: -150vh;
+  background-size: 400%;
 }
 
 #all-cards{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 5em;
-  margin: 5%;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  gap: 4em;
+  color: rgb(80, 71, 54);
 }
 
 a{
@@ -95,13 +122,13 @@ a{
 }
 
 a:link {
-  color: black;
+  color: rgb(100, 93, 79);
 }
 
 a:visited {
-  color: black;
+  color: rgb(100, 93, 79);
 }
 
 a:hover {
-  color: grey;
+  color: rgb(177, 127, 35);
 }
