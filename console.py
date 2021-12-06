@@ -11,9 +11,9 @@ country_repository.delete_all()
 city_repository.delete_all()
 place_of_interest_repository.delete_all()
 
-country_1 = Country("Latvia", "Riga", 1857200, True)
+country_1 = Country("Latvia", "Riga", True)
 country_repository.save(country_1)
-country_2 = Country("Australia", "Canberra", 25929200)
+country_2 = Country("Australia", "Canberra")
 country_repository.save(country_2)
 
 city_1 = City("Perth", country_2)

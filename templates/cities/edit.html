@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="/countries/cities/{{city.id}}/update" method="post">
+<form action="/cities/{{city.id}}/update" method="post">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="description" name="name" value="{{city.name}}" placeholder="Name" required autofocus>

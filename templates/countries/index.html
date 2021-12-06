@@ -2,30 +2,32 @@
 
 {% block content %}
 <h1><b>Countries</b></h1>
-<p><a href="/countries/new">add country</a></p></p>
+<p><a href="/countries/new">➕ country</a></p></p>
+<div id="card-container">
+{% for country in countries %}
+<a href="/countries/{{country.id}}"><div class="text-card">
+  <div class="heading">
+    <h1>{{country.name}}</h1>
+    <h3>{{country.capital}}</h3>
+  </div>
 
-<table id="country_table">
-  <tr>
-    <th>Name</th>
-    <th>Capital</th>
-    <th>Population</th>
-    <th>Visited?</th>
-    <th>Delete?</th>
-  </tr>
-  {% for country in countries %}
-  <tr>
-    <td><a href="/countries/{{ country.id }}"> {{country.name}} </a></td>
-    <td>{{country.capital}}</td>
-    <td>{{country.population}}</td>
-    <td>{% if country.visited == True %}
-        ✔️
-    {% endif %}</td>
-    <td>
-      <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
-        <button class="trash-button">Delete City</button>
-      </form>
-    </td>
-  </tr>
-  {% endfor %}
-</table>
+  <div class="text-box">
+<p>
+  {% if country.visited == True %}
+  visited: ✔️
+  {% else %}
+    visited: 𝘅
+  {% endif %}</p>
+  <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
+    <button class="trash-button">🗑</button>
+    <a href="/countries/{{country.id}}/edit"><b>Edit</b></a>
+  </form>
+  </p>
+  </div>
+</div>
+</a>
+{% endfor %}
+</div>
 {% endblock %}
+
+

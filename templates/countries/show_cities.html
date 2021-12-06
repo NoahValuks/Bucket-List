@@ -1,16 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 <p>To edit the country <a href="/countries/{{country.id}}/edit">click here</a></p>
-<p>Add a new <a href="/cities/new">city!</a></p>
+<p><a href="/cities/new">➕ city!</a></p>
   
 
-<h1>Cities within {{country.name}} </h1>
-    {% for city in cities %}
-    <p><a href="/countries/cities/{{ city.id }}"> {{city.name}} </a>|
-        Visited: 
-        {% if city.visited == True %}
-            ✔️
-        {% endif %}
-    </P>
+{% for city in cities %}
+<a href="/cities/{{ city.id }}"><div id="card-container"></div>
+    <div class="text-card">
+      <div class="heading">
+        <h2>{{city.name}}</h2>
+
+      <div class="text-box">
+    <p>
+      {% if city.visited == True %}
+      visited: ✔️
+      {% else %}
+        visited: 𝘅
+      {% endif %}</p>
+      <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
+        <button class="trash-button">🗑</button>
+        <a href="/cities/{{city.id}}/edit"><b>Edit</b></a>
+      </form>
+      </p>
+      </div>
+    </div>
     {% endfor %}
-{% endblock content %}
+</a>  
+    {% endblock content %}

@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="/cities/place_of_interest/update" method="post">
+<form action="/place_of_interest/update/{{place.id}}" method="post">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="description" name="name" value="{{place.name}}" placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+      <label for="information">Information:</label>
+      <textarea name="information" id="information" cols="30" rows="5"></textarea>
     </div>
 
     <div>
@@ -16,6 +21,7 @@
               {% endfor %}
             </select>
     </div>
+
     <div>
       <label for="visited">Visited:</label>
       <select id="visited" name="visited">

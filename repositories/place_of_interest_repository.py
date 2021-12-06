@@ -43,7 +43,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(place_of_interest):
-    sql = "UPDATE places_of_interest SET (name, information, city, visited) = (%s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE places_of_interest SET (name, information, city_id, visited) = (%s, %s, %s, %s) WHERE id = %s"
     values = [place_of_interest.name, place_of_interest.information, place_of_interest.city.id, place_of_interest.visited, place_of_interest.id]
     run_sql(sql, values)
 
