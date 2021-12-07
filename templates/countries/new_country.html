@@ -3,19 +3,19 @@
 <h1>Add a New Country!</h1>
 <div class="form">
 <form action="/countries" method="post">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Name">
+    <div class="formContainer">
+      <label class="label" for="name">Name:</label>
+      <input class="input" type="text" id="name" name="name" placeholder="Name">
     </div>
   
-    <div>
-      <label for="capital">Capital:</label>
-      <input type="text" id="capital" name="capital" placeholder="Capital">
+    <div class="formContainer">
+      <label class="label" for="capital">Capital:</label>
+      <input class="input" type="text" id="capital" name="capital" placeholder="Capital">
     </div>
 
-    <div>
-        <label for="visited">Visited:</label>
-        <select id="visited" name="visited" placeholder="Visited?">
+    <div class="formContainer">
+        <label class="label" for="visited">Visited:</label>
+        <select class="select" id="visited" name="visited" placeholder="Visited?">
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>

@@ -15,9 +15,9 @@
 
     <div class="formContainer">
         <label class="label" for="city">City:</label>
-        <select class="input" id="city" name="city_id">
+        <select class="select" id="city" name="city_id">
           {% for city in cities %}
-              <option value="{{city.id}}" {% if city.id == place.city.id %}
+              <option value="{{city.id}}" {% if place.city.id == city.id %}
                   selected="selected"
               {% endif %}>{{city.name}}</option>
               {% endfor %}
@@ -36,7 +36,7 @@
       </select>
     </div>
   
-    <button type="submit">Update Place Of Interest</button>
+    <button class="button" type="submit">Update Place Of Interest</button>
 </div>
 </form>
 {% endblock content %}

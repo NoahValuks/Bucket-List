@@ -4,25 +4,25 @@
     
     <form action="/place_of_interest/create" method ='post'>
         <div class="form">
-        <div>
-            <label for="name">Place:</label>
-            <input type="text" name="name" id="name">
+        <div class="formContainer">
+            <label class="label" for="name">Place:</label>
+            <input class="input" type="text" name="name" id="name">
         </div>
-        <div class="information">
-            <label for="information">Information:</label>
-            <textarea name="information" id="information" cols="15" rows="3"></textarea>
+        <div class="formContainer">
+            <label class= "label" for="information">Information:</label>
+            <textarea class="input" name="information" id="information" cols="15" rows="3"></textarea>
         </div>
-        <div>
-            <label for="city">City:</label>
-            <select name="city_id" id="city">
+        <div class="formContainer">
+            <label class="label" for="city">City:</label>
+            <select class="select" name="city_id" id="city">
                 {% for city in cities %}
                     <option value="{{city.id}}">{{city.name}}</option>
                 {% endfor %}
             </select>
         </div>
-        <div>
-            <label for="visited">Visited:</label>
-            <select id="visited" name="visited">
+        <div class="formContainer">
+            <label class="label" for="visited">Visited:</label>
+            <select class="select" id="visited" name="visited">
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>

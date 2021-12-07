@@ -3,23 +3,23 @@
 <h1>Add City to Bucket List!</h1>
 <form action="/cities" method="post">
   <div class="form">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
+    <div class="formContainer">
+      <label class="label" for="name">Name:</label>
+      <input class="container" type="text" id="name" name="name">
     </div>
   
-    <div>
-        <label for="country">Country:</label>
-        <select id="country" name="country_id">
+    <div class="formContainer">
+        <label class="label" for="country">Country:</label>
+        <select class="select" id="country" name="country_id">
           {% for country in countries %}
               <option value="{{country.id}}">{{country.name}}</option>
           {% endfor %}
         </select>
     </div>
 
-    <div>
-        <label for="visited">Visited:</label>
-        <select id="visited" name="visited">
+    <div class="formContainer">
+        <label class="label" for="visited">Visited:</label>
+        <select class="select" id="visited" name="visited">
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>
