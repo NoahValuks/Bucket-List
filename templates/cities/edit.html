@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 <form action="/cities/{{city.id}}/update" method="post">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="description" name="name" value="{{city.name}}" placeholder="Name" required autofocus>
+  <h1>Edit {{city.name}}</h1>  
+  <div class="form">
+  <div class="formContainer">
+      <label class="label" for="name">Name:</label>
+      <input class="input" type="text" id="description" name="name" value="{{city.name}}" placeholder="Name" required autofocus>
     </div>
 
-    <div>
-        <label for="country">Country:</label>
-        <select id="country" name="country_id">
+    <div class="formContainer">
+        <label class="label" for="country">Country:</label>
+        <select class="input" id="country" name="country_id">
           {% for country in countries %}
               <option value="{{country.id}}" {% if city.country.id == country.id %}
                   selected="selected"
@@ -17,9 +19,9 @@
         </select>
       </div>
   
-    <div>
-      <label for="visited">Visited:</label>
-      <select id="visited" name="visited">
+    <div class="formContainer">
+      <label class="label" for="visited">Visited:</label>
+      <select class="input" id="visited" name="visited">
         <option value="true" {% if city.visited == True %}
             selected ="selected"
         {% endif %}>True</option>
@@ -30,7 +32,7 @@
     </div>
   
     <button type="submit">Update City</button>
-  
+  </div>
 </form>
 
 <p>If the country is not on the list <a href="/countries/new">click here!</a></p>

@@ -3,11 +3,12 @@
     <h1>Add Place Of Interest to city!</h1>
     
     <form action="/place_of_interest/create" method ='post'>
+        <div class="form">
         <div>
             <label for="name">Place:</label>
             <input type="text" name="name" id="name">
         </div>
-        <div>
+        <div class="information">
             <label for="information">Information:</label>
             <textarea name="information" id="information" cols="15" rows="3"></textarea>
         </div>
@@ -26,6 +27,7 @@
               <option value="false">No</option>
             </select>
         </div>
-        <button type="submit">Add Place Of Interest</button>
+        <button class="button" type="submit">Add Place Of Interest</button>
+        </div>
     </form>
 {% endblock content %}

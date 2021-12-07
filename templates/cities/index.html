@@ -38,7 +38,7 @@ Visited:
         visited: 𝘅
       {% endif %}</p>
       <form class="delete-form" action="/place_of_interest/{{city.id}}/{{place.id}}/delete" method="POST">
-        <button class="trash-button">🗑</button>
+        <button class="trash-button"><img src="/static/pictures/Bin.png" class="w3-round" alt="bin"></button>
         <a href="/place_of_interest/{{place.id}}/edit"><b>Edit</b></a>
       </form>
       </p>

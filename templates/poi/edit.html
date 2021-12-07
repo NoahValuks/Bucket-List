@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 <form action="/place_of_interest/update/{{place.id}}" method="post">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="description" name="name" value="{{place.name}}" placeholder="Name" required autofocus>
+  <h1>Edit {{place.name}}</h1>
+  <div class="form">  
+  <div class="formContainer">
+      <label class="label" for="name">Name:</label>
+      <input class="input" type="text" id="description" name="name" value="{{place.name}}" placeholder="Name" required autofocus>
     </div>
 
-    <div>
-      <label for="information">Information:</label>
-      <textarea name="information" id="information" cols="30" rows="5"></textarea>
+    <div class="formContainer">
+      <label class="label" for="information">Information:</label>
+      <textarea class="input" name="information" id="information" value="{{place.information}}" placeholder="Information" required autofocus  cols="30" rows="5" ></textarea>
     </div>
 
-    <div>
-        <label for="city">City:</label>
-        <select id="city" name="city_id">
+    <div class="formContainer">
+        <label class="label" for="city">City:</label>
+        <select class="input" id="city" name="city_id">
           {% for city in cities %}
               <option value="{{city.id}}" {% if city.id == place.city.id %}
                   selected="selected"
@@ -22,9 +24,9 @@
             </select>
     </div>
 
-    <div>
-      <label for="visited">Visited:</label>
-      <select id="visited" name="visited">
+    <div class="formContainer">
+      <label class="label" for="visited">Visited:</label>
+      <select class="input" id="visited" name="visited">
         <option value="true" {% if place.visited == True %}
             selected ="selected"
         {% endif %}>True</option>
@@ -35,6 +37,6 @@
     </div>
   
     <button type="submit">Update Place Of Interest</button>
-  
+</div>
 </form>
 {% endblock content %}

@@ -29,14 +29,14 @@
         visited: 𝘅
       {% endif %}</p>
       <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
-        <button class="trash-button">🗑</button>
+        <button class="trash-button"><img src="/static/pictures/Bin.png" class="w3-round" alt="bin"></button>
         <a href="/cities/{{city.id}}/edit"><b>Edit</b></a>
       </form>
       </p>
       </div>
     </div>
     </div>
-</a>  
+  </a> 
     {% endfor %} 
 </div>
     {% endblock content %}
