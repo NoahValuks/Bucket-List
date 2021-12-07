@@ -3,7 +3,7 @@ from flask import Blueprint
 from models.city import City
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
-import repositories.place_of_interest_repository as place_of_interest_repository
+import repositories.poi_repository as poi_repository
 
 cities_blueprint = Blueprint("cities", __name__)
 
@@ -25,7 +25,7 @@ def create_city():
 @cities_blueprint.route('/cities/<id>')
 def show_city(id):
     city = city_repository.select(id)
-    places = place_of_interest_repository.select_all_from_city(id)
+    places = poi_repository.select_all_from_city(id)
     return render_template('/cities/index.html', city=city, places = places)
 
 @cities_blueprint.route('/cities/<id>/edit')

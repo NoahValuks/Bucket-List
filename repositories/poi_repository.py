@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-from models.place_of_interest import PlaceOfInterest
+from models.poi import PlaceOfInterest
 import repositories.city_repository as city_repository
 
 def save(place_of_interest):

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Add City to Bucket List!</h1>
+<h5 class="clickHere">If the country is not on the list <a href="/countries/new">click here!</a></h5>
 <form action="/cities" method="post">
   <div class="form">
     <div class="formContainer">
       <label class="label" for="name">Name:</label>
-      <input class="container" type="text" id="name" name="name">
+      <input class="input" type="text" id="name" name="name" placeholder="Name">
     </div>
   
     <div class="formContainer">
@@ -30,5 +31,4 @@
   </div>
 </form>
 
-<p>If the country is not on the list <a href="/countries/new">click here!</a></p>
 {% endblock content %}

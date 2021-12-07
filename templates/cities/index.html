@@ -16,7 +16,7 @@ Visited:
       <div class="dropdown-content">
         <a href="/cities/{{city.id}}/edit">Edit City</a>
         <a href="/cities/{{city.id}}/delete">Delete City</a>
-        <a href="/place_of_interest/new">Add place of interest</a>
+        <a href="/poi/new">Add place of interest</a>
       </div>
     </div>
   </nav>
@@ -37,9 +37,9 @@ Visited:
       {% else %}
         visited: 𝘅
       {% endif %}</p>
-      <form class="delete-form" action="/place_of_interest/{{city.id}}/{{place.id}}/delete" method="POST">
+      <form class="delete-form" action="/poi/{{city.id}}/{{place.id}}/delete" method="POST">
         <button class="trash-button"><img src="/static/pictures/Bin.png" class="w3-round" alt="bin"></button>
-        <a href="/place_of_interest/{{place.id}}/edit"><b>Edit</b></a>
+        <a href="/poi/{{place.id}}/edit"><b>Edit</b></a>
       </form>
       </p>
       </div>
