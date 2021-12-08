@@ -42,7 +42,7 @@ def update_country(id):
     visited = request.form['visited']
     country = Country(name, capital, visited, id)
     country_repository.update(country)
-    return redirect(f"/countries/{country.id}")
+    return redirect("/countries")
 
 @countries_blueprint.route("/countries/<id>/delete", methods = ['POST'])
 def delete_country(id):
