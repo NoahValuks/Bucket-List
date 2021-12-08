@@ -20,6 +20,7 @@ country_repository.save(country_3)
 country_4 = Country("Venezuela", "Caracus")
 country_repository.save(country_4)
 country_5 = Country("Iceland", "Reykjavík", True)
+country_repository.save(country_5)
 
 city_1 = City("Perth", country_2)
 city_repository.save(city_1)
@@ -34,7 +35,7 @@ city_repository.save(city_5)
 
 poi_1 = PlaceOfInterest("Perth video game console museum", "Explore the museum that houses more than 100 consoles from the 1970s through to the 2000s", city_1)
 poi_repository.save(poi_1)
-poi_2 = PlaceOfInterest("Central Market", "Buy food, trinkets, clothes and other things!", True)
+poi_2 = PlaceOfInterest("Central Market", "Buy food, trinkets, clothes and other things!", city_3, True)
 poi_repository.save(poi_2)
 
 cities = city_repository.select_all()

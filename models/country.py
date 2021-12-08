@@ -4,6 +4,3 @@ class Country:
         self.capital = capital
         self.visited = visited
         self.id = id
-
-    def mark_visited(self):
-        self.visited = True

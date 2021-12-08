@@ -5,6 +5,3 @@ class PlaceOfInterest:
         self.city = city
         self.visited = visited
         self.id = id
-
-    def mark_visited(self):
-        self.visited = True

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Add Place Of Interest to city!</h1>
+<h1>Add Place Of Interest to city!</h1>
     
     <form action="/poi/create" method ='post'>
-        <div class="form">
+    <div class="form">
         <div class="formContainer">
             <label class="label" for="name">Place:</label>
-            <input class="input" type="text" name="name" id="name" value="Place">
+            <input class="input" type="text" name="name" id="name" placeholder="Place">
         </div>
         <div class="formContainer">
             <label class= "label" for="information">Information:</label>
-            <textarea class="input" name="information" id="information" cols="15" rows="3"></textarea>
+            <textarea class="input" name="information" id="information" placeholder="Information" cols="15" rows="3"></textarea>
         </div>
         <div class="formContainer">
             <label class="label" for="city">City:</label>
