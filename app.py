@@ -14,5 +14,9 @@ app.register_blueprint(poi_blueprint)
 def home():
     return render_template('index.html')
 
+@app.route('/pete')
+def pete():
+    return render_template('pete.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -14,11 +14,12 @@
 
 <div id="all-cards">
   {% for city in cities %}
-    <a href="/cities/{{ city.id }}">
     <div id="card-container">
       <div class="text-card">
         <div class="heading">
+          <a href="/cities/{{ city.id }}">
             <h2>{{city.name}}</h2>
+          </a>
         </div>
 
       <div class="text-box">
@@ -37,6 +38,6 @@
     </div>
   </div>
   </a> 
-    {% endfor %} 
+  {% endfor %} 
 </div>
     {% endblock content %}
