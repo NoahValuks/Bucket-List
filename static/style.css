@@ -232,3 +232,9 @@ input[type=text]{
   margin-top: -10px;
   margin-bottom: 25px;
 }
+
+.easterEgg{
+  margin-left: 7px;
+  max-height: 0.7%;
+  max-width: 0.7%;
+}
