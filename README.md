@@ -26,4 +26,7 @@ python3 console.py
 
 flask run
 
-![home_page]()
+
+What the homepage should look like: 
+
+![home_page](https://github.com/NoahValuks/Bucket_list_python_project/blob/main/static/pictures/home_screen.png)
